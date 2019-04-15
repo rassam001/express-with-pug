@@ -1,0 +1,70 @@
+- const navList = ['home', 'aboutme', 'blog', 'contact'];
+- const carsArray = ['BMW', 'VOLVO', 'VW', 'ALFA ROMEO']
+doctype html
+head
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    title Express with pug #{title}
+    link(rel="stylesheet" href="style.css")
+
+body
+    // body started
+
+    //- comment will not be rendered
+    
+    header#page-header
+        h1.brand heading
+        nav(class="navbar", id="nav")
+            ul
+                //- create 4 li with ancher tag for home, about me, blog and contact
+                    li
+                        a(href="/") Home
+                    li
+                        a(href="/aboutme") About me
+                    li
+                        a(href="/blog") Blog 
+                    li
+                        a(href="/contact") Contact
+                each item in navList
+                    li
+                        a(href=`${item}`)= item
+
+
+    h1 This is the homepage
+
+    ul
+        h3 Really gooooood books
+        each val, i in ['run run', 'The man who laugh', 'JavaScript from A to Z', 'who know why??']
+            li ( i + 1 ) + '- ' + val
+            //- li= `${i+1}- ${val}`
+
+    ul
+        h3 List of Car Brand
+        - for (let i = 0; i < carsArray.length; i++)
+            li= carsArray[i]
+
+    ul
+        h3 List of whatever
+        - let n = 0;
+        while n < carsArray.length
+            li= n++
+
+
+    section(id='portfolio', class='work')
+        //- -
+        //-     const figures = [
+        //-         {src: 'https://source.unsplash.com/random/800x400v=1', altText: 'image nr 1'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=2', altText: 'image nr 2'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=3', altText: 'image nr 3'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=4', altText: 'image nr 4'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=5', altText: 'image nr 5'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=6', altText: 'image nr 6'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=7', altText: 'image nr 7'},
+        //-         {src: 'https://source.unsplash.com/random/800x400v=8', altText: 'image nr 8'},
+        //-         ]
+
+            
+        h3 Work
+        each item in figures
+            figure
+                img(src=item.src, alt=item.altText)
+                figcaption= item.altText

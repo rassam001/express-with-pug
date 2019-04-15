@@ -1,0 +1,26 @@
+doctype html
+head
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    title Express with pug #{title}
+    link(rel="stylesheet" href="style.css")
+
+body
+    // body started
+
+    //- comment will not be rendered
+    
+    header#page-header
+        h1.brand heading
+        nav(class="navbar", id="nav")
+            ul
+                //- create 4 li with ancher tag for home, about me, blog and contact
+                li
+                    a(href="/") Home
+                li
+                    a(href="/aboutme") About me
+                li
+                    a(href="/blog") Blog 
+                li
+                    a(href="/contact") Contact
+
+    h1 This is the blog

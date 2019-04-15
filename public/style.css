@@ -1,0 +1,21 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+#portfolio {
+	display: flex;
+	flex-wrap: wrap;
+}
+#portfolio h3 {
+	text-align: center;
+	flex-basis: 100%;
+}
+#portfolio figure {
+	flex-basis: 25%;
+	margin: 0;
+	padding: 0.25em;
+	box-sizing: border-box;
+}
+#portfolio img {
+	width: 100%;
+}
